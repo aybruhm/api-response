@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: api-payload
-Version: 0.0.1
+Version: 0.1
 Summary: Industry ready custom API payload with an easy format for building Python APIs (Django/Django Rest Framework)
 Home-page: https://github.com/israelabraham
 Author: Abraham (Abram 🐼) Israel
