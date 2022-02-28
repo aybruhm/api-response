@@ -126,6 +126,6 @@ Keywords: api,payload,custom api payload
 Platform: UNKNOWN
 Classifier: Development Status :: 5 - Production/Stable
 Classifier: Intended Audience :: Education
-Classifier: Operating System :: Linux :: MacOS :: Microsoft Windows
+Classifier: Intended Audience :: Developers
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Programming Language :: Python :: 3
