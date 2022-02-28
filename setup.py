@@ -13,7 +13,7 @@ setup(
   version='0.0.1',
   description='Industry ready custom API payload with an easy format for building Python APIs (Django/Django Rest Framework)',
   long_description_content_type="text/markdown",
-  long_description=open('README.md').read() + '\n\n' + open('CHANGELOG.txt').read(),
+  long_description=open('README.md').read(),
   url='https://github.com/israelabraham',  
   author='Abraham (Abram 🐼) Israel',
   author_email='israelvictory87@gmail.com',

@@ -1,10 +1,8 @@
-# API Payload
+Industry ready custom API payload with an easy format for building Python APIs (Django/Django Rest Framework)
 
 Yosh! If you are a django backend developer and have used the amazing utility toolkit for creating amazing APIs. You probably have come across the way django rest framework lets you return data by default. Not industry standard, if I may add. 
 
 So you serialize what object you want, and it serialized and you return it like so;
-
-<br>
 
 ```
 class GetPostsAPiView(APIView):
@@ -19,7 +17,6 @@ class GetPostsAPiView(APIView):
         
         else:
             return Response(serializer.errors)
-
 
 
 # OUTPUT
@@ -66,7 +63,6 @@ class GetPostsAPiView(APIView):
                 message="Something went wrong, chief! Try again sometime"
             )
             return Response(data=payload)
-
 
 
 # OUTPUT
