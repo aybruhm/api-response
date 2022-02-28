@@ -19,6 +19,6 @@ setup(
   license='MIT', 
   classifiers=classifiers,
   keywords=['api', 'payload', 'custom api payload'], 
-  packages=find_packages(),
+  packages='api_payload',
   install_requires=[''] 
 )
