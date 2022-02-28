@@ -1,7 +1,0 @@
-README.md
-setup.py
-api_payload/__init__.py
-api_payload.egg-info/PKG-INFO
-api_payload.egg-info/SOURCES.txt
-api_payload.egg-info/dependency_links.txt
-api_payload.egg-info/top_level.txt
