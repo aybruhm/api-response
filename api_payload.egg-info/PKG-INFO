@@ -1,4 +1,4 @@
-Metadata-Version: 1.1
+Metadata-Version: 2.1
 Name: api-payload
 Version: 0.0.1
 Summary: Industry ready custom API payload with an easy format for building Python APIs (Django/Django Rest Framework)
@@ -129,3 +129,4 @@ Classifier: Intended Audience :: Education
 Classifier: Intended Audience :: Developers
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
