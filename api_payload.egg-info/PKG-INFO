@@ -6,13 +6,11 @@ Home-page: https://github.com/israelabraham
 Author: Abraham (Abram 🐼) Israel
 Author-email: israelvictory87@gmail.com
 License: MIT
-Description: # API Payload
+Description: Industry ready custom API payload with an easy format for building Python APIs (Django/Django Rest Framework)
         
         Yosh! If you are a django backend developer and have used the amazing utility toolkit for creating amazing APIs. You probably have come across the way django rest framework lets you return data by default. Not industry standard, if I may add. 
         
         So you serialize what object you want, and it serialized and you return it like so;
-        
-        <br>
         
         ```
         class GetPostsAPiView(APIView):
@@ -27,7 +25,6 @@ Description: # API Payload
                 
                 else:
                     return Response(serializer.errors)
-        
         
         
         # OUTPUT
@@ -76,7 +73,6 @@ Description: # API Payload
                     return Response(data=payload)
         
         
-        
         # OUTPUT
         -----------
         - success response
@@ -115,13 +111,6 @@ Description: # API Payload
         - Request a new topic creating a `New issue` with the `enhancement` tag.
         - Find any kind of errors in the `README` and create a `New issue` with the details or fork the project and do a Pull Request.
         - Suggest a better or more pythonic way for existing examples.
-        
-        Change Log
-        ==========
-        
-        0.0.1 (28/02/2022)
-        -------------------
-        - First Release
 Keywords: api,payload,custom api payload
 Platform: UNKNOWN
 Classifier: Development Status :: 5 - Production/Stable
