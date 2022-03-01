@@ -85,11 +85,11 @@ class GetPostsAPiView(APIView):
 
 What do you think about the above? Pretty neat and industry standard, right? Installing the package is pretty is easy, fam. Here's how to:
 
-> pip install module
+> pip install rest-api-payload
 
 In the file (.py) that you wish to use it, import it. <br>
 
-> from module import success_response, error_response
+> from rest_api_payload import success_response, error_response
 
 And that's all, you can begin calling the function and passing arguments!
 
