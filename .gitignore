@@ -1,5 +1,5 @@
 build/
-dist/
 __pycache__
 htmlcov
 .vscode
+rest_api_payload.egg-info
