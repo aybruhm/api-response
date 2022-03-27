@@ -12,9 +12,17 @@ Change Log
 
 
 0.0.3 (1/03/2022)
+-------------------
 - Refactor codebase
 - Created response file to store logics
 
 0.0.4 (1/03/2022)
+-------------------
 - Fixed ImportError
 - Refactor documentation
+
+
+0.0.5 (27/03/2022)
+-------------------
+- Write unittest
+- Documented error and success reponse function
