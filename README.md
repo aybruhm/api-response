@@ -1,4 +1,4 @@
-Industry ready custom API payload with an easy format for building Python APIs (Django/Django Rest Framework)
+Production ready custom API payload with an easy format for building APIs with Python.
 
 Yosh! If you are a django backend developer and have used the amazing utility toolkit for creating amazing APIs. You probably have come across the way django rest framework lets you return data by default. Not industry standard, if I may add. 
 
