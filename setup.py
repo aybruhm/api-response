@@ -11,7 +11,7 @@ classifiers = [
 setup(
   name='rest_api_payload',
   version='0.0.6',
-  description='Industry ready custom API payload with an easy format for building Python APIs (Django/Django Rest Framework)',
+  description='A to-go-to production API payload with an easy format for building APIs with Python.',
   long_description_content_type="text/markdown",
   long_description=open('README.md').read(),
   url='https://github.com/israelabraham/API-Payload',  
