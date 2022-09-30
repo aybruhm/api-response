@@ -1,14 +1,18 @@
-def error_response(status:bool, message:str):
+# Typing Imports
+from typing import Any
+
+
+def error_response(status:bool, message:str) -> dict[str, Any]:
     """
     Custom error response
     
-    :param status: The status code of the response
+    :param status: This is a boolean value that indicates whether the request was not successful
     :type status: bool
     
-    :param message: The message you want to display to the end user
+    :param message: This is the message you want to send to the user
     :type message: str
     
-    :return: A dictionary of status and message
+    :return: A dictionary with the keys status and message.
     """
     
     payload = {
@@ -18,7 +22,7 @@ def error_response(status:bool, message:str):
     return payload
 
 
-def success_response(status:bool, message:str, data:dict = {}):
+def success_response(status:bool, message:str, data:dict = {}) -> dict[str, Any]:
     """
     Custom success response
     
