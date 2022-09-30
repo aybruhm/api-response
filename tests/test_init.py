@@ -1,5 +1,5 @@
 import unittest
-from rest_api_payload import error_response, success_response
+from rest_api_payload import success_response, error_response
 
 
 class TestInit(unittest.TestCase):
