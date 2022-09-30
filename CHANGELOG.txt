@@ -26,3 +26,11 @@ Change Log
 -------------------
 - Write unit test
 - Documented error and success response function
+
+
+0.0.6 (30/09/2022)
+-------------------
+- Added type hints
+- Update unit test
+- Update documentation
+- Bump version to 0.0.6
