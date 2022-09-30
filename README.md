@@ -1,96 +1,106 @@
-Production ready custom API payload with an easy format for building APIs with Python.
+# Production API Payload
 
-Yosh! If you are a django backend developer and have used the amazing utility toolkit for creating amazing APIs. You probably have come across the way django rest framework lets you return data by default. Not industry standard, if I may add. 
+A to-go-to production API payload with an easy format for building APIs with Python.
 
-So you serialize what object you want, and it serialized and you return it like so:
+## Quickstart
 
-    class GetPostsAPiView(APIView):
+To get it running, follow the steps below:
 
-        def get(self, request):
-            posts = Post.objects.all()
-            post_serializer = PostSerializer(posts,  many=True)
+1). Pip install the package in your project terminal:
 
-            if post_serializer.is_valid():
-                post_serializer.save()
-                return Response(serializer.data)
-            
-            else:
-                return Response(serializer.errors)
+```bash
+pip install rest-api-payload
+```
 
+2). In the file (.py) that you wish to use it, import it:
 
-    # OUTPUT
-    -----------
-    - success response
-    {
-        'title': 'First blog post', 
-        'content': 'Lorem ipsume content', 
-        'author': 1
-    }
-
-    - error response
-    {
-        ['title']: 'field is required'
-    }
-
-
-Does the above ouput makes sense to you? I mean, it clearly doesn't help the frontend devs, trying putting yourself in their shoes. Imagine the dev is trying to check for the status code in the data been outputted, and the above is what the developer got. Dang! Extra work, right? I happen to work with a mobile developer, and he changed the way I build APIs. So instead of the above way, what do you think of this:
-
+```python
     from rest_api_payload import success_response, error_response
+```
+
+That's pretty much it - you can now call the function and pass the required arguments!
+
+## Example
+
+Suppose you have a function that returns a response to the client:
+
+```python
+...
+    def list_of_posts(request):
+        """Returns a list of posts"""
+        post = Post.objects.all()
+        post_serializer = PostSerializer(post, many=True)
+        return Response(post_serializer.data)
+```
+
+The above response output would be:
+
+```json
+    [
+        {
+            "title": "First blog post", 
+            "content": "Lorem ipsume content", 
+            "author": 1
+        },
+        {
+            "title": "Second blog post", 
+            "content": "Lorem ipsume content", 
+            "author": 2
+        },
+        {
+            "title": "Third blog post", 
+            "content": "Lorem ipsume content", 
+            "author": 3
+        }
+    ]
+```
+
+This works too, but let's take the function to the next level by doing this:
+
+```python
+...
+from rest_api_payload import success_response
 
 
-    class GetPostsAPiView(APIView):
+    def list_of_posts(request):
+        """Returns a list of post"""
+        post = Post.objects.all()
+        post_serializer = PostSerializer(post, many=True)
 
-        def get(self, request):
-            posts = Post.objects.all()
-            post_serializer = PostSerializer(posts,  many=True)
+        payload = success_response(
+            status=True,
+            message="Post retrieved!",
+            data=post_serializer.data
+        )
+        return Response(data=payload, status=status.HTTP_200_OK)
+```
 
-            if post_serializer.is_valid():
-                post_serializer.save()
+The above response output would be:
 
-                payload = success_response(
-                    status="200 ok",
-                    message="All the posts don come, chief!"
-                    data=serializer.data
-                )
-                return Response(data=payload)
-            
-            else:
-                payload = error_response(
-                    status="400 bad request",
-                    message="Something went wrong, chief! Try again sometime"
-                )
-                return Response(data=payload)
+```json
+    [   "status": true, 
+        "message":"Posts retrieved!", 
+        "data": {
+            {
+                "title": "First blog post", 
+                "content": "Lorem ipsume content", 
+                "author": 1
+            },
+            {
+                "title": "Second blog post", 
+                "content": "Lorem ipsume content", 
+                "author": 2
+            },
+            {
+                "title": "Third blog post", 
+                "content": "Lorem ipsume content", 
+                "author": 3
+            }
+        }
+    ]
+```
 
-
-    # OUTPUT
-    -----------
-    - success response
-    {
-        'status': '200 ok', 
-        'message':'All the posts don come, chief!', 
-        'data': {'title': 'First blog post', 'content': 'Lorem ipsume content', 'author': 1}'
-    }
-
-    - error response
-    {
-        'status': '400 bad request',
-        'message': 'Ahh, chief, nothing dey here oooo!',
-        'data': {['title']: 'field is required'}
-    }
-
-
-
-What do you think about the above? Pretty neat and industry standard, right? Installing the package is pretty is easy, fam. Here's how to:
-
-    pip install rest-api-payload
-
-In the file (.py) that you wish to use it, import it. <br>
-
-    from rest_api_payload import success_response, error_response
-
-And that's all, you can begin calling the function and passing arguments!
-
-<br>
+*I built this payload because of a project I took lead in building from scratch - and literally had to sympathize with the frontend (web and mobile) engineers. I hope you find this package useful, kindly leave a star if you did.*
 
 ## Contribute
 
