@@ -7,18 +7,20 @@ class TestInit(unittest.TestCase):
     def test_error_response(self):
         
         payload = {
-            "status": "400 bad request",
+            "status": False,
             "message": 'BAD REQUEST!'
         }
         self.assertEqual(
             payload, 
-            error_response(status=payload.get("status"), message=payload.get("message"))
+            error_response(
+                status=payload.get("status"), 
+                message=payload.get("message"))
         )
         
     def test_success_response(self):
         
         payload = {
-            "status": "200 ok",
+            "status": True,
             "message": 'OKKK!',
             "data": {
                 "title": "title 1",
