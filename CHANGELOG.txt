@@ -34,3 +34,10 @@ Change Log
 - Update unit test
 - Update documentation
 - Bump version to 0.0.6
+
+
+0.0.7 (21/01/2023)
+--------------------
+- Modified type hints
+- Update unit test
+- Bump version to 0.0.7
