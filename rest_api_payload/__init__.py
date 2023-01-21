@@ -1,8 +1,8 @@
 # Typing Imports
-from typing import Any
+from typing import Dict, Union
 
 
-def error_response(status:bool, message:str) -> dict[str, Any]:
+def error_response(status: bool, message: str) -> Dict[str, Union[bool, str]]:
     """
     Custom error response
     
@@ -14,15 +14,14 @@ def error_response(status:bool, message:str) -> dict[str, Any]:
     
     :return: A dictionary with the keys status and message.
     """
-    
-    payload = {
-        "status": status,
-        "message": message
-    }
-    return payload
+
+    response = {"status": status, "message": message}
+    return response
 
 
-def success_response(status:bool, message:str, data:dict = {}) -> dict[str, Any]:
+def success_response(
+    status: bool, message: str, data: dict = {}
+) -> Dict[str, Union[bool, str, dict]]:
     """
     Custom success response
     
@@ -37,10 +36,6 @@ def success_response(status:bool, message:str, data:dict = {}) -> dict[str, Any]
     
     :return: A dictionary with the keys status, message, and data.
     """
-    
-    payload = {
-        "status": status,
-        "message": message,
-        "data": data
-    }
-    return payload
+
+    response = {"status": status, "message": message, "data": data}
+    return response
