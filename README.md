@@ -1,6 +1,6 @@
-# Production API Payload
+# Production API Response
 
-A to-go-to production API payload with an easy format for building APIs with Python.
+A go-to production API response with an easy format for building APIs with Python.
 
 ## Quickstart
 
@@ -9,31 +9,36 @@ To get it running, follow the steps below:
 1). Pip install the package in your project terminal:
 
 ```bash
-pip install rest-api-payload
+pip install rest-api-response
 ```
 
 2). In the file (.py) that you wish to use it, import it:
 
 ```python
-    from rest_api_payload import success_response, error_response
+    from rest_api_response import success_response, error_response
 ```
 
 That's pretty much it - you can now call the function and pass the required arguments!
 
 ## Example
 
-Suppose you have a function that returns a response to the client:
+Suppose you have an API class that returns a list of blog posts to a client:
 
 ```python
+# imports goes here
 ...
-    def list_of_posts(request):
+class PostListAPIView(views.APIView):
+    serializer_class = PostSerializer
+
+    def get(self, request):
         """Returns a list of posts"""
-        post = Post.objects.all()
-        post_serializer = PostSerializer(post, many=True)
-        return Response(post_serializer.data)
+
+        posts = Post.objects.all()
+        serializer = self.serializer_class(posts, many=True)
+        return Response(serializer.data)
 ```
 
-The above response output would be:
+The API response would be:
 
 ```json
     [
@@ -55,31 +60,34 @@ The above response output would be:
     ]
 ```
 
-This works too, but let's take the function to the next level by doing this:
+This works too, but let's take the response to the next level by doing this:
 
 ```python
+# imports goes here
 ...
-from rest_api_payload import success_response
+from rest_api_response import success_response
 
 
-    def list_of_posts(request):
-        """Returns a list of post"""
-        post = Post.objects.all()
-        post_serializer = PostSerializer(post, many=True)
+class PostListAPIView(views.APIView):
+    serializer_class = PostSerializer
 
-        payload = success_response(
-            status=True,
+    def get(self, request):
+        """Returns a list of posts"""
+
+        posts = Post.objects.all()
+        serializer = self.serializer_class(posts, many=True)
+        _response = success_response(
             message="Post retrieved!",
-            data=post_serializer.data
+            data=serializer.data
         )
-        return Response(data=payload, status=status.HTTP_200_OK)
+        return Response(data=_response, status=status.HTTP_200_OK)
 ```
 
-The above response output would be:
+The API response would be:
 
 ```json
     [   "status": true, 
-        "message":"Posts retrieved!", 
+        "message": "Posts retrieved!", 
         "data": {
             {
                 "title": "First blog post", 
@@ -100,7 +108,7 @@ The above response output would be:
     ]
 ```
 
-*I built this payload because of a project I took lead in building from scratch - and literally had to sympathize with the frontend (web and mobile) engineers. I hope you find this package useful, kindly leave a star if you did.*
+And that's it. You have a nicely catchy response. :-)
 
 ## Contribute
 
