@@ -9,16 +9,16 @@ classifiers = [
 ]
 
 setup(
-    name="rest_api_payload",
-    version="0.0.7",
-    description="A to-go-to production API payload with an easy format for building APIs with Python.",
+    name="rest_api_response",
+    version="0.1",
+    description="A go-to production API response with an easy format for building APIs with Python.", # noqa: E501
     long_description_content_type="text/markdown",
     long_description=open("README.md").read(),
-    url="https://github.com/israelabraham/API-Payload",
+    url="https://github.com/israelabraham/api-response",
     author="Abram",
     author_email="israelvictory87@gmail.com",
     license="MIT",
     classifiers=classifiers,
-    keywords=["api", "payload", "custom api payload"],
+    keywords=["api", "response", "custom api response"],
     packages=find_packages(),
 )
