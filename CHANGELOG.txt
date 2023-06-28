@@ -49,3 +49,9 @@ Change Log
 - Renamed package name, changed description and url
 - Modified README documentation
 - Bump version to 0.1
+
+0.1.1 (28/06/2023)
+--------------------
+- Modified README documentation
+- Bump version to 0.1.1
+- Changed home page url
