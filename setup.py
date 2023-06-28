@@ -10,7 +10,7 @@ classifiers = [
 
 setup(
     name="rest_api_response",
-    version="0.1",
+    version="0.1.1",
     description="A go-to production API response with an easy format for building APIs with Python.", # noqa: E501
     long_description_content_type="text/markdown",
     long_description=open("README.md").read(),
