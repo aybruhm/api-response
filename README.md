@@ -15,7 +15,7 @@ pip install rest-api-response
 2). In the file (.py) that you wish to use it, import it:
 
 ```python
-    from rest_api_response import success_response, error_response
+from rest_api_response import success_response, error_response
 ```
 
 That's pretty much it - you can now call the function and pass the required arguments!
@@ -41,23 +41,23 @@ class PostListAPIView(views.APIView):
 The API response would be:
 
 ```json
-    [
-        {
-            "title": "First blog post", 
-            "content": "Lorem ipsume content", 
-            "author": 1
-        },
-        {
-            "title": "Second blog post", 
-            "content": "Lorem ipsume content", 
-            "author": 2
-        },
-        {
-            "title": "Third blog post", 
-            "content": "Lorem ipsume content", 
-            "author": 3
-        }
-    ]
+[
+    {
+        "title": "First blog post", 
+        "content": "Lorem ipsume content", 
+        "author": 1
+    },
+    {
+        "title": "Second blog post", 
+        "content": "Lorem ipsume content", 
+        "author": 2
+    },
+    {
+        "title": "Third blog post", 
+        "content": "Lorem ipsume content", 
+        "author": 3
+    }
+]
 ```
 
 This works too, but let's take the response to the next level by doing this:
@@ -86,26 +86,27 @@ class PostListAPIView(views.APIView):
 The API response would be:
 
 ```json
-    [   "status": true, 
-        "message": "Posts retrieved!", 
-        "data": [
-            {
-                "title": "First blog post", 
-                "content": "Lorem ipsume content", 
-                "author": 1
-            },
-            {
-                "title": "Second blog post", 
-                "content": "Lorem ipsume content", 
-                "author": 2
-            },
-            {
-                "title": "Third blog post", 
-                "content": "Lorem ipsume content", 
-                "author": 3
-            }
-        ]
+[   
+    "status": true, 
+    "message": "Posts retrieved!", 
+    "data": [
+        {
+            "title": "First blog post", 
+            "content": "Lorem ipsume content", 
+            "author": 1
+        },
+        {
+            "title": "Second blog post", 
+            "content": "Lorem ipsume content", 
+            "author": 2
+        },
+        {
+            "title": "Third blog post", 
+            "content": "Lorem ipsume content", 
+            "author": 3
+        }
     ]
+]
 ```
 
 And that's it. You have a nicely catchy response. :-)
