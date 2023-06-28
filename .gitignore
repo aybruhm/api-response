@@ -3,3 +3,5 @@ __pycache__
 htmlcov
 .vscode
 rest_api_payload.egg-info
+dist/
+rest_api_response.egg-info
