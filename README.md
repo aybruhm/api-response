@@ -88,7 +88,7 @@ The API response would be:
 ```json
     [   "status": true, 
         "message": "Posts retrieved!", 
-        "data": {
+        "data": [
             {
                 "title": "First blog post", 
                 "content": "Lorem ipsume content", 
@@ -104,7 +104,7 @@ The API response would be:
                 "content": "Lorem ipsume content", 
                 "author": 3
             }
-        }
+        ]
     ]
 ```
 
