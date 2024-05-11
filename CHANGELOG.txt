@@ -55,3 +55,8 @@ Change Log
 - Modified README documentation
 - Bump version to 0.1.1
 - Changed home page url
+
+0.2 (11/05/2024)
+--------------------
+- Add support for list of dictionary data response
+- Improve code quality and test cases
