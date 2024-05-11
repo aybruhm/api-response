@@ -15,7 +15,7 @@ setup(
     long_description_content_type="text/markdown",
     long_description=open("README.md").read(),
     url="https://github.com/aybruhm/api-response",
-    author="Abram",
+    author="Abraham 'Abram' Israel",
     author_email="israelvictory87@gmail.com",
     license="MIT",
     classifiers=classifiers,
