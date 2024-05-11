@@ -16,4 +16,4 @@ jobs:
         python-version: "3.9"
 
     - name: Test with unittest
-      run: python -m unittest tests/test_init.py
+      run: python -m unittest rest_api_response/tests/test_responses.py
